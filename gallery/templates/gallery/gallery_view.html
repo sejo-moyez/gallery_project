@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <a href="{% url 'upload_image' %}">Upload New Image</a>  <!-- Link to upload page -->
+    <hr>
+    <div>
+        {% for image in images %}  <!-- Loop through all images -->
+            <div>
+                <h3>{{ image.title }}</h3>  <!-- Show the image title -->
+                <img src="{{ image.image.url }}" alt="{{ image.title }}" width="200">  <!-- Show the image -->
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
